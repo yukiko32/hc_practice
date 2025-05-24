@@ -47,10 +47,12 @@ a {
   text-decoration: none;
 }
 
+.resume a,
 .resume a:visited {
   color: #fff;
 }
 
+.menu a,
 .menu a:visited {
   color: #000;
 }
@@ -162,5 +164,7 @@ footer p {
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 }
-
+.footer-line {
+  height: 1px;
+}
 }
