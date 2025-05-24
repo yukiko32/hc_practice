@@ -1,0 +1,166 @@
+/* スマートフォン用の設定 */
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 960px;
+  padding: 0 4%;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+li {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+
+.resume {
+  background-color: #384151;
+  color: #fff;
+  font-size: 1.5em;
+  width: 120px;
+  margin-left: 5px;
+}
+
+.right-menu {
+  display: flex;
+  font-size: .9em;
+}
+
+.menu {
+  margin-left: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.resume a:visited {
+  color: #fff;
+}
+
+.menu a:visited {
+  color: #000;
+}
+
+.main-img {
+  background-image: url(../images/img_1920x1280.png);
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+}
+
+h3,
+.profile p,
+footer p {
+  text-align: center;
+}
+
+.introduce {
+  margin-bottom: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+h2 {
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #000;
+  font-size: 2em;
+  margin: 90px 0 30px 0;
+}
+
+.intro-text h3 {
+  font-size: 1.1em;
+}
+
+.intro-text p {
+  margin: 0 auto 10px auto;
+  font-size: 1.1em;
+  line-height: 1.4em;
+  text-align: left;
+}
+
+.introduce img,
+.profile img {
+  display: block;
+  margin: 0 auto;
+}
+
+.introduce img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.prof-section {
+  margin-top: 30px;
+}
+
+.profile h3 {
+  font-size: 1em;
+}
+
+.profile p {
+  margin-bottom: 14px;
+}
+
+.profile img {
+  width: 100%;
+}
+
+footer {
+  margin-top: 106px;
+}
+
+footer p {
+  margin-bottom: 10px;
+  font-size: .7em;
+}
+
+.footer-line {
+  height: 6px;
+  background-color: #000;
+}
+
+/* PC用の設定 */
+@media screen and (min-width: 601px) {
+
+.intro-content {
+  display: flex;
+  justify-content: center;
+}
+
+.intro-text {
+  margin-left: 32px;
+}
+
+.intro-text h3 {
+  text-align: left;
+}
+
+.introduce img {
+  margin: 20px 0 0 20px;;
+}
+
+.prof-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+}
