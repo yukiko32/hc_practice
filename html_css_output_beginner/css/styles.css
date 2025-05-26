@@ -20,18 +20,19 @@ ul {
   margin: 10px 0;
 }
 
+h1,
 li {
   text-align: center;
   height: 40px;
   line-height: 40px;
 }
 
-.resume {
+h1 {
   background-color: #384151;
   color: #fff;
   font-size: 1.5em;
   width: 120px;
-  margin-left: 5px;
+  margin: 10px 0 10px 5px;
 }
 
 .right-menu {
@@ -47,8 +48,8 @@ a {
   text-decoration: none;
 }
 
-.resume a,
-.resume a:visited {
+h1 a,
+h1 a:visited {
   color: #fff;
 }
 
