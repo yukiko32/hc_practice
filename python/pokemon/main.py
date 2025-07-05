@@ -3,6 +3,7 @@ from pokemon import Pikachu
 
 
 def main():
+    """動作確認用"""
     # ポケモンの動作確認
     pika = Pikachu("ピカチュウ","でんき", "", 100)
     pika.attack()
