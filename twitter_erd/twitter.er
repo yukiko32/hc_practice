@@ -1,0 +1,87 @@
+[users]
+*id {label: "bigint, not null"}
+email {label: "varchar, not null, uniq"}
+user_name {label: "varchar, null, uniq"}
+phone_number {label: "varchar, null, uniq"}
+display_name {label: "varchar, null"}
+self_introduction {label: "text, null"}
+location {label: "varchar, null"}
+website {label: "varchar, null"}
+birth_date {label: "datetime, null"}
+profile_image {label: "varchar, null"}
+avatar_image {label: "varchar, null"}
+created_at {label: "datetime, not null"}
+updated_at {label: "datetime, not null"}
+
+[tweets]
+*id {label: "bigint, not null"}
+user_id {label: "bigint, not null, FK(users)"}
+content {label: "text(140), not null"}
+created_at {label: "datetime, not null"}
+updated_at {label: "datetime, not null"}
+
+[likes]
+*id {label: "bigint, not null"}
+user_id {label: "bigint, not null, FK(users)"}
+tweet_id {label: "bigint, not null, FK(tweets)"}
+created_at {label: "datetime, not null"}
+updated_at {label: "datetime, not null"}
+
+[retweets]
+*id {label: "bigint, not null"}
+user_id {label: "bigint, not null, FK(users)"}
+tweet_id {label: "bigint, not null, FK(tweets)"}
+created_at {label: "datetime, not null"}
+updated_at {label: "datetime, not null"}
+
+[follows]
+*id {label: "bigint, not null"}
+follower_id {label: "bigint, not null, FK(users)"}
+followee_id {label: "bigint, not null, FK(users)"}
+created_at {label: "datetime, not null"}
+updated_at {label: "datetime, not null"}
+
+[direct_messages]
+*id {label: "bigint, not null"}
+sender_id {label: "bigint, not null, FK(users)"}
+recipient_id {label: "bigint, not null, FK(users)"}
+content {label: "text, not null"}
+created_at {label: "datetime, not null"}
+updated_at {label: "datetime, not null"}
+
+[notifications]
+*id {label: "bigint, not null"}
+recipient_id {label: "bigint, not null, FK(users)"}
+action_id {label: "bigint, not null, FK(users)"}
+notification_type {label: "enum('like','follow'), not null"}
+resource_id {label: "bigint, not null"}
+read_at {label: "datetime, null"}
+created_at {label: "datetime, not null"}
+updated_at {label: "datetime, not null"}
+
+[bookmarks]
+*id {label: "bigint, not null"}
+user_id {label: "bigint, not null, FK(users)"}
+tweet_id {label: "bigint, not null, FK(tweets)"}
+created_at {label: "datetime, not null"}
+updated_at {label: "datetime, not null"}
+
+# Cardinality    Syntax
+# 0 or 1         ?
+# exactly 1      1
+# 0 or more      *
+# 1 or more      +
+
+users 1--* tweets
+users 1--* likes
+users 1--* retweets
+users 1--* bookmarks
+users 1--* follows  # フォロワー
+users 1--* follows  # フォロイー
+users 1--* direct_messages  # DM送信者
+users 1--* direct_messages  # DM受信者
+users 1--* notifications  # 通知受信者
+users 1--* notifications  # アクションする人
+tweets 1--* likes
+tweets 1--* retweets
+tweets 1--* bookmarks
