@@ -1,8 +1,8 @@
 /**
  * 年と月を指定してカレンダーを表示する
  * @param {Object} params - 年月のオブジェクト
- * @param { number } params.year - 表示するカレンダーの年
- * @param { number } params.month - 表示するカレンダーの月（1-12月は0-11とする）
+ * @param {number} params.year - 表示するカレンダーの年
+ * @param {number} params.month - 表示するカレンダーの月（1-12月は0-11とする）
  * @returns {void}
  */
 const displayCalendar = ({ year, month }) => {
