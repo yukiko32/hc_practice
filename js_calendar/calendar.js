@@ -61,7 +61,7 @@ const getDate = () => {
       process.exit(1);
     }
     // 月を設定（0-11で扱うため1を引く）
-    month = arg - 1;
+    month = numArg - 1;
   }
 
   return { year, month };
