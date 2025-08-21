@@ -54,8 +54,9 @@ const getDate = () => {
   const option = "-m";
   if (process.argv[2] === option) {
     // 1月〜12月の範囲でない場合はエラーを出す
-    const arg = Number(process.argv[3]);
-    if (!(arg >= 1 && arg <= 12)) {
+    const arg = process.argv[3];
+    const numArg = Number(arg);
+    if (Number.isNaN(numArg) || !(numArg >= 1 && numArg <= 12)) {
       console.error(`${arg} is neither a month number (1..12) nor a name`);
       process.exit(1);
     }
