@@ -15,22 +15,21 @@ const displayCalendar = ({ year, month }) => {
   // 月末日、月初の曜日の数値、今日の日付を取得
   const lastDay = new Date(year, month + 1, 0).getDate();
   const firstDayOfWeek = new Date(year, month).getDay();  // 日曜-土曜: 0-6
-  const today = new Date().getDate();
+  const today = new Date();
+  const currentDate = today.getDate();
 
   // 表示する月が今月か判定
-  const isCurrentMonth = new Date().getFullYear() === year && new Date().getMonth() === month;
+  const isCurrentMonth = today.getFullYear() === year && today.getMonth() === month;
 
   // 月初日までの空白を表示
-  for (let i = 0; i < firstDayOfWeek; i++) {
-    process.stdout.write("   ");
-  }
+  process.stdout.write("   ".repeat(firstDayOfWeek));
 
   // 月初から月末までの日付を表示
   for (let i = 1; i <= lastDay; i++) {
     const day = String(i).padStart(2, " ");
 
     // 日付を表示（当日の場合は色を反転）
-    if (isCurrentMonth && i === today) {
+    if (isCurrentMonth && i === currentDate) {
       process.stdout.write("\x1b[7m" + day + "\x1b[0m" + " ");
     } else {
       process.stdout.write(day + " ");
